@@ -15,5 +15,9 @@
 }
 
 .pieces{
-    width: 50px;
+    width: 65px;
+}
+
+.pawn{
+    width: 45px;
 }

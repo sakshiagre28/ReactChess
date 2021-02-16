@@ -38,7 +38,7 @@ function ChessBoard(){
                 
                 }
             });
-           board.push(<Tile tileNumber = {number} image = {image}/>)
+           board.push(<Tile tileNumber = {number} image = {image} />)
               
         }
     }

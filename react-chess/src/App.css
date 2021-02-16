@@ -2,5 +2,6 @@
   display: grid;
   place-content: center;
   height :100vh;
+  background-image : linear-gradient(to right,#000000 ,#04619F,#000000);
 }
 
