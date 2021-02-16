@@ -9,15 +9,3 @@
     place-content: center;
 }
 
-.tile{
-    width: 100px;
-    height: 100px;
-}
-
-.blackTile{
-    background-color: #91a022;
-}
-
-.whiteTile{
-    background-color: #eeeed2;
-}
