@@ -23,7 +23,38 @@ for(let p = 0 ; p<2; p++){
     pieces.push({image : "assets/images/"+pieceColor+"_queen.png", x : 3  , y : yPos})
     pieces.push({image : "assets/images/"+pieceColor+"_king.png", x : 4  , y : yPos})
 }
+let activePiece = null;
+function grabPiece(e){
+    const element = e.target 
+    if(element.classList.contains("pieces") || element.classList.contains("pawn")){
+        
+        const x = e.clientX - 50
+        const y = e.clientY - 50
+        element.style.position =  "absolute"
+        element.style.left = x+"px";
+        element.style.top = y+"px" ; 
+        activePiece = element
+    }
+}
 
+function movePiece(e){
+    
+    if(activePiece){
+        
+        const x = e.clientX - 50
+        const y = e.clientY - 50
+        activePiece.style.position =  "absolute"
+        activePiece.style.left = x+"px";
+        activePiece.style.top = y+"px" ; 
+    
+    }
+}
+
+function dropPiece(e){
+    if(activePiece){
+        activePiece = null
+    }
+}
 function ChessBoard(){
    
     let board =[]
@@ -38,13 +69,16 @@ function ChessBoard(){
                 
                 }
             });
-           board.push(<Tile tileNumber = {number} image = {image} />)
+           board.push(<Tile key = {j+","+i} tileNumber = {number} image = {image} />)
               
         }
     }
     
     return(
-    <div className = "chessboard">
+    <div onMouseDown = {e => grabPiece(e)} 
+         onMouseMove = {e => movePiece(e)} 
+         onMouseUp = {e=> dropPiece(e)}
+         className = "chessboard">
         {board}
     </div>)
 }

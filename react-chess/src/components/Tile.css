@@ -15,9 +15,32 @@
 }
 
 .pieces{
-    width: 65px;
+    height : 100px;
+    width : 100px;
+    background-repeat: no-repeat;
+    background-size: 65px;
+    background-position: center;
+}
+
+.pieces:hover{
+    cursor: grab;
+}
+.pieces:active{
+    cursor: grabbing;
 }
 
 .pawn{
-    width: 45px;
+    height : 100px;
+    width : 100px;
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: center;
+}
+
+.pawn:hover{
+    cursor: grab;
+}
+
+.pawn:active{
+    cursor: grabbing;
 }
